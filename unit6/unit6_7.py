@@ -11,13 +11,14 @@ def big_fibonacci(n):
     i=1
     m=1
     s=0
-    while n==len(str(i)):
+    while n>=len(str(i)):
         if n==len(str(i)):
             return i
         else:
-            s==i+m
-            m==i
-            i==s
+            s=i+m
+            m=i
+            i=s
+            
         
         
         
