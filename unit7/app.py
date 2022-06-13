@@ -9,9 +9,7 @@ def start():
     
     text = """You are a part of a criminal gang and you and your mate're arrested.
     Your are in solitary confinement with no means of speaking to your mate.
-
     It is a dark and cold in cell. You want to get out as soon as possible...
-
     The police admit they don't have enough evidence to convict you on the principal charge. 
     They plan to sentence you to a year in prison on a lesser charge.
     However, the police is kind today and offer each of you a bargain.
@@ -22,16 +20,15 @@ def start():
     If you betray your mate but your mate  remains silent, you will be set free and your mate will serve 5 years in prison
     If you remain silent but your mate betrays you, you will serve 5 years in prison and your mate will be set free
     If you both remain silent, both of you will serve one year in prison on the lesser charge.
-
-    What do you do?
     """
 
     choices = [
         ('remain_silent',"Remain silent"),
         ('betray',"Betray your mate")
     ]
+    picture ="prisoner.png"
 
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    return render_template('adventure.html', title=title, text=text, choices=choices,picture=picture)
 
 
 
@@ -43,22 +40,22 @@ def remain_silent():
     Now police is mad, they want to convict someone on the principal charge.. 
     They start to push you and your mate... 
     You are really scared..Police offer each of you the same bargain again.
-
+    
     The possible outcomes are the same:
     
     If you and your mate betray each other, each of you serves 10 years in prison
     If you betray your mate but your mate  remains silent, you will be set free and your mate will serve 5 years in prison
     If you remain silent but your mate betrays you, you will serve 5 years in prison and your mate will be set free
     If you both remain silent, both of you will serve one year in prison on the lesser charge.
-
-    What do you do?"""
+    """
 
     choices = [
         ('remain_silent_still',"Still remain silent"),
         ('betray',"Betray your mate")
     ]
+    picture ="police.png"
 
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    return render_template('adventure.html', title=title, text=text, choices=choices, picture=picture)
 
 @app.route("/betray")
 def betray():
@@ -71,8 +68,8 @@ def betray():
     Don't be selfish in your next crime!"""
 
     choices = []
-
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    picture ="custody.png"
+    return render_template('adventure.html', title=title, text=text, choices=choices,picture=picture)
 
 
 
@@ -89,5 +86,6 @@ def remain_silent_still():
     Nice job! You win!"""
 
     choices = []
+    picture ="burglar.png"
 
-    return render_template('adventure.html', title=title, text=text, choices=choices)
+    return render_template('adventure.html', title=title, text=text, choices=choices, picture=picture)
